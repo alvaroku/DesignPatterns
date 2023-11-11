@@ -1,0 +1,15 @@
+C:\Users\alvar\Desktop\DEV\Ejemplos\.net\DesignPatterns\DesignPatterns\bin\Debug\net7.0\DesignPatterns.exe
+C:\Users\alvar\Desktop\DEV\Ejemplos\.net\DesignPatterns\DesignPatterns\bin\Debug\net7.0\DesignPatterns.deps.json
+C:\Users\alvar\Desktop\DEV\Ejemplos\.net\DesignPatterns\DesignPatterns\bin\Debug\net7.0\DesignPatterns.runtimeconfig.json
+C:\Users\alvar\Desktop\DEV\Ejemplos\.net\DesignPatterns\DesignPatterns\bin\Debug\net7.0\DesignPatterns.dll
+C:\Users\alvar\Desktop\DEV\Ejemplos\.net\DesignPatterns\DesignPatterns\bin\Debug\net7.0\DesignPatterns.pdb
+C:\Users\alvar\Desktop\DEV\Ejemplos\.net\DesignPatterns\DesignPatterns\obj\Debug\net7.0\DesignPatterns.csproj.AssemblyReference.cache
+C:\Users\alvar\Desktop\DEV\Ejemplos\.net\DesignPatterns\DesignPatterns\obj\Debug\net7.0\DesignPatterns.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alvar\Desktop\DEV\Ejemplos\.net\DesignPatterns\DesignPatterns\obj\Debug\net7.0\DesignPatterns.AssemblyInfoInputs.cache
+C:\Users\alvar\Desktop\DEV\Ejemplos\.net\DesignPatterns\DesignPatterns\obj\Debug\net7.0\DesignPatterns.AssemblyInfo.cs
+C:\Users\alvar\Desktop\DEV\Ejemplos\.net\DesignPatterns\DesignPatterns\obj\Debug\net7.0\DesignPatterns.csproj.CoreCompileInputs.cache
+C:\Users\alvar\Desktop\DEV\Ejemplos\.net\DesignPatterns\DesignPatterns\obj\Debug\net7.0\DesignPatterns.dll
+C:\Users\alvar\Desktop\DEV\Ejemplos\.net\DesignPatterns\DesignPatterns\obj\Debug\net7.0\refint\DesignPatterns.dll
+C:\Users\alvar\Desktop\DEV\Ejemplos\.net\DesignPatterns\DesignPatterns\obj\Debug\net7.0\DesignPatterns.pdb
+C:\Users\alvar\Desktop\DEV\Ejemplos\.net\DesignPatterns\DesignPatterns\obj\Debug\net7.0\DesignPatterns.genruntimeconfig.cache
+C:\Users\alvar\Desktop\DEV\Ejemplos\.net\DesignPatterns\DesignPatterns\obj\Debug\net7.0\ref\DesignPatterns.dll
