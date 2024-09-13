@@ -25,20 +25,36 @@ subject.SomeBusinessLogic();
 subject.SomeBusinessLogic();
 
 //Chain of Responsibility
-Approver manager = new Manager();
-Approver director = new Director();
-Approver ceo = new CEO();
+var monkey = new MonkeyHandler();
+var squirrel = new SquirrelHandler();
+var dog = new DogHandler();
 
-manager.SetNext(director);
-director.SetNext(ceo);
+monkey.SetNext(squirrel).SetNext(dog);
 
-var request1 = new PurchaseRequest(1, 500);
-var request2 = new PurchaseRequest(2, 2000);
-var request3 = new PurchaseRequest(3, 10000);
+foreach (var food in new List<string> { "Nut", "Banana", "Cup of coffee" })
+{
+    Console.WriteLine($"Client: Who wants a {food}?");
 
-manager.HandleRequest(request1);
-manager.HandleRequest(request2);
-manager.HandleRequest(request3);
+    var result = monkey.Handle(food);
+
+    if (result != null)
+    {
+        Console.Write($"   {result}");
+    }
+    else
+    {
+        Console.WriteLine($"   {food} was left untouched.");
+    }
+}
+
+// The client should be able to send a request to any handler, not
+// just the first one in the chain.
+Console.WriteLine("Chain: Monkey > Squirrel > Dog\n");
+monkey.Handle("Nut");
+Console.WriteLine();
+
+Console.WriteLine("Subchain: Squirrel > Dog\n");
+squirrel.Handle("Nut");
 
 //Strategy
 TaxCalculator taxCalculator = new TaxCalculator(new USATaxStrategy());

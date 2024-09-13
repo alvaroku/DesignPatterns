@@ -1,69 +1,80 @@
 ﻿namespace DesignPatterns.Patterns
 {
-    public abstract class Approver
+    public interface IHandler
     {
-        protected Approver _nextApprover;
+        IHandler SetNext(IHandler handler);
 
-        public void SetNext(Approver nextApprover)
-        {
-            _nextApprover = nextApprover;
-        }
-
-        public abstract void HandleRequest(PurchaseRequest request);
-    }
-    public class Manager : Approver
-    {
-        public override void HandleRequest(PurchaseRequest request)
-        {
-            if (request.Amount < 1000)
-            {
-                Console.WriteLine($"Manager approved request# {request.RequestNumber} for {request.Amount:C}.");
-            }
-            else if (_nextApprover != null)
-            {
-                _nextApprover.HandleRequest(request);
-            }
-        }
+        object Handle(object request);
     }
 
-    public class Director : Approver
+    abstract class AbstractHandler : IHandler
     {
-        public override void HandleRequest(PurchaseRequest request)
+        private IHandler _nextHandler;
+
+        public IHandler SetNext(IHandler handler)
         {
-            if (request.Amount < 5000)
+            this._nextHandler = handler;
+
+            // Returning a handler from here will let us link handlers in a
+            // convenient way like this:
+            // monkey.SetNext(squirrel).SetNext(dog);
+            return handler;
+        }
+
+        public virtual object Handle(object request)
+        {
+            if (this._nextHandler != null)
             {
-                Console.WriteLine($"Director approved request# {request.RequestNumber} for {request.Amount:C}.");
+                return this._nextHandler.Handle(request);
             }
-            else if (_nextApprover != null)
+            else
             {
-                _nextApprover.HandleRequest(request);
+                return null;
             }
         }
     }
-
-    public class CEO : Approver
+    class MonkeyHandler : AbstractHandler
     {
-        public override void HandleRequest(PurchaseRequest request)
+        public override object Handle(object request)
         {
-            if (request.Amount >= 5000)
+            if ((request as string) == "Banana")
             {
-                Console.WriteLine($"CEO approved request# {request.RequestNumber} for {request.Amount:C}.");
+                return $"Monkey: I'll eat the {request.ToString()}.\n";
             }
-            else if (_nextApprover != null)
+            else
             {
-                _nextApprover.HandleRequest(request);
+                return base.Handle(request);
             }
         }
     }
-    public class PurchaseRequest
-    {
-        public int RequestNumber { get; }
-        public double Amount { get; }
 
-        public PurchaseRequest(int requestNumber, double amount)
+    class SquirrelHandler : AbstractHandler
+    {
+        public override object Handle(object request)
         {
-            RequestNumber = requestNumber;
-            Amount = amount;
+            if (request.ToString() == "Nut")
+            {
+                return $"Squirrel: I'll eat the {request.ToString()}.\n";
+            }
+            else
+            {
+                return base.Handle(request);
+            }
+        }
+    }
+
+    class DogHandler : AbstractHandler
+    {
+        public override object Handle(object request)
+        {
+            if (request.ToString() == "MeatBall")
+            {
+                return $"Dog: I'll eat the {request.ToString()}.\n";
+            }
+            else
+            {
+                return base.Handle(request);
+            }
         }
     }
 }
